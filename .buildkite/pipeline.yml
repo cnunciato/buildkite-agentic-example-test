@@ -1,0 +1,12 @@
+steps:
+  - label: ":bun: Generate the pipeline"
+    command: |
+
+      echo "--- :bun: Install Bun"
+      curl -fsSL https://bun.com/install | bash
+      export PATH=":$$HOME/.bun/bin:$$PATH"
+      bun --version
+
+      # Generate and upload the pipeline to handle the webhook.
+      echo "--- :bun: Run the things"
+      bun run ./index.ts
